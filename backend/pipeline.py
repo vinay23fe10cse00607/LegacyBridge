@@ -77,11 +77,11 @@ class LegacyBridgePipeline:
 
         return result
 
-
+ 
 # RUN THIS TO TEST EVERYTHING
 if __name__ == "__main__":
     pipeline = LegacyBridgePipeline()
     result = pipeline.run("C:\\Users\\hp\\LegacyBridge\\sample_cobol\\tax_calculator.cbl")
 
     print("\n\n--- GENERATED PYTHON API ---")
-    print(result["generated_code"])
+    print(result["generated_code"])  

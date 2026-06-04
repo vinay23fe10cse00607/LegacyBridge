@@ -24,7 +24,6 @@ class LLMClient:
         prompt = self.prompt_builder.build_understanding_prompt(
             parsed_data, extracted_data
         )
-
         response = self.client.chat.completions.create(
             model=self.model,
             messages=[
@@ -108,4 +107,4 @@ if __name__ == "__main__":
     )
 
     print("\n--- GENERATED PYTHON API ---")
-    print(api_code)
+    print(api_code) 

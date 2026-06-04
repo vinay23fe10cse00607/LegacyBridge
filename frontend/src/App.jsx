@@ -4,6 +4,10 @@ import Navbar from "./Navbar"
 import Dashboard from "./Dashboard"
 import TranslatePage from "./TranslateePage"
 import HistoryPage from "./HistoryPage"
+import PlaygroundPage from "./PlaygroundPage"
+import PricingPage from "./PricingPage"
+import ApiDocsPage from "./ApiDocsPage"
+import SettingsPage from "./SettingsPage"
 
 export default function App() {
   const [user, setUser] = useState(null)
@@ -32,12 +36,10 @@ export default function App() {
     setToken(null)
   }
 
-  if (!user) {
-    return <AuthPage onLogin={handleLogin} />
-  }
+  if (!user) return <AuthPage onLogin={handleLogin} />
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0a0a0f" }}>
+    <div style={{ minHeight: "100vh", background: "var(--bg2)" }}>
       <Navbar
         user={user}
         onLogout={handleLogout}
@@ -45,22 +47,13 @@ export default function App() {
         setActivePage={setActivePage}
       />
       <main>
-        {activePage === "dashboard" && (
-          <Dashboard
-            user={user}
-            token={token}
-            setActivePage={setActivePage}
-          />
-        )}
-        {activePage === "translate" && (
-          <TranslatePage
-            token={token}
-            setActivePage={setActivePage}
-          />
-        )}
-        {activePage === "history" && (
-          <HistoryPage token={token} />
-        )}
+        {activePage === "dashboard" && <Dashboard user={user} token={token} setActivePage={setActivePage} />}
+        {activePage === "translate" && <TranslatePage token={token} setActivePage={setActivePage} />}
+        {activePage === "history" && <HistoryPage token={token} setActivePage={setActivePage} />}
+        {activePage === "playground" && <PlaygroundPage token={token} setActivePage={setActivePage} />}
+        {activePage === "pricing" && <PricingPage setActivePage={setActivePage} />}
+        {activePage === "apidocs" && <ApiDocsPage token={token} />}
+        {activePage === "settings" && <SettingsPage user={user} token={token} onLogout={handleLogout} />}
       </main>
     </div>
   )
