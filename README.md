@@ -3,7 +3,7 @@
 > AI-powered COBOL to Modern Python API Translator
 
 ## 🌍 Live Demo
-- **Frontend:** https://legacy-bridge-6j3gfh4q2-vinaydev00s-projects.vercel.app
+- **Frontend:** https://legacy-bridge-rho.vercel.app
 - **Backend API:** https://legacybridge.onrender.com/docs
 
 ## 🚀 What is LegacyBridge?
